@@ -12,6 +12,7 @@ body {
     justify-content: center;
     background: #ffc4d6;
     overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .container {
@@ -197,12 +198,9 @@ body {
 
 /* Responsive */
 @media (max-width: 768px) {
-    body {
-        overflow-x: hidden;
-    }
-
     .container {
         padding: 30px 15px;
+        min-height: auto;
     }
 
     .revealed-gift {
