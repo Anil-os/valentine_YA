@@ -1,0 +1,198 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffc4d6;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+/* Scattered hearts */
+.scattered-hearts {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.scattered-heart {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    opacity: 0.5;
+    animation: float 8s ease-in-out infinite;
+}
+
+.s1 { top: 10%; left: 10%; width: 30px; height: 30px; animation-delay: 0s; }
+.s2 { top: 20%; right: 15%; width: 25px; height: 25px; animation-delay: 1s; }
+.s3 { bottom: 20%; left: 15%; width: 28px; height: 28px; animation-delay: 2s; }
+.s4 { bottom: 15%; right: 10%; width: 32px; height: 32px; animation-delay: 3s; }
+.s5 { top: 50%; left: 5%; width: 26px; height: 26px; animation-delay: 1.5s; }
+.s6 { top: 60%; right: 8%; width: 24px; height: 24px; animation-delay: 2.5s; }
+.s7 { top: 30%; left: 20%; width: 22px; height: 22px; animation-delay: 3.5s; }
+.s8 { bottom: 30%; right: 25%; width: 29px; height: 29px; animation-delay: 4s; }
+.s9 { top: 15%; right: 30%; width: 27px; height: 27px; animation-delay: 1.2s; }
+.s10 { bottom: 40%; left: 25%; width: 24px; height: 24px; animation-delay: 2.8s; }
+.s11 { top: 40%; left: 15%; width: 24px; height: 24px; animation-delay: 2.2s; }
+.s12 { top: 70%; right: 20%; width: 26px; height: 26px; animation-delay: 3.2s; }
+.s13 { bottom: 50%; left: 8%; width: 23px; height: 23px; animation-delay: 1.8s; }
+.s14 { bottom: 60%; right: 5%; width: 27px; height: 27px; animation-delay: 2.3s; }
+.s15 { top: 5%; left: 25%; width: 21px; height: 21px; animation-delay: 0.8s; }
+.s16 { top: 35%; right: 12%; width: 25px; height: 25px; animation-delay: 3.8s; }
+.s17 { bottom: 10%; left: 30%; width: 29px; height: 29px; animation-delay: 4.5s; }
+.s18 { bottom: 65%; right: 18%; width: 22px; height: 22px; animation-delay: 1.3s; }
+.s19 { top: 45%; left: 35%; width: 26px; height: 26px; animation-delay: 2.7s; }
+.s20 { top: 80%; right: 35%; width: 24px; height: 24px; animation-delay: 3.3s; }
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(5deg);
+    }
+}
+
+/* Content */
+.content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    animation: fadeInScale 1s ease-out;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.title {
+    font-size: 3rem;
+    color: #d63384;
+    margin-bottom: 40px;
+    font-family: 'Brush Script MT', cursive;
+    animation: slideDown 0.8s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.qr-container {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    margin-bottom: 30px;
+    animation: zoomIn 0.8s ease-out 0.3s backwards;
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.qr-code {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+}
+
+.instruction {
+    font-size: 1.4rem;
+    color: #8b4555;
+    font-weight: 500;
+    animation: fadeIn 1s ease-out 0.6s backwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .container {
+        padding: 30px 15px;
+    }
+
+    .title {
+        font-size: 2.2rem;
+        margin-bottom: 30px;
+    }
+
+    .qr-container {
+        padding: 20px;
+    }
+
+    .qr-code {
+        max-width: 280px;
+    }
+
+    .scattered-heart {
+        opacity: 0.4;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+
+    .qr-container {
+        padding: 15px;
+    }
+
+    .qr-code {
+        max-width: 240px;
+    }
+}
