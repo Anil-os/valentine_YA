@@ -1,6 +1,6 @@
 function handleYes() {
-    // Redirect to the everyday page
-    window.location.href = 'everyday-page.html';
+    // Redirect to the yes page
+    window.location.href = 'yes-page.html';
 }
 
 function handleNo() {
